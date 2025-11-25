@@ -28,6 +28,8 @@ export default function HomePage() {
   const [explainMode, setExplainMode] = useState<ExplainMode>("beginner");
   const [lastScanAt, setLastScanAt] = useState<Date | null>(null);
 
+  const currentYear = new Date().getFullYear(); // ✅ footer ke liye
+
   const handleScan = async () => {
     setError("");
     setResult(null);
@@ -154,7 +156,7 @@ export default function HomePage() {
         {/* Top brand / header */}
         <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="flex items-center gap-3">
-            {/* LOGO AREA – only this part changed to use your genie logo + cyan theme */}
+            {/* LOGO AREA */}
             <div className="relative h-11 w-11 rounded-3xl bg-slate-900/80 border border-cyan-400/60 shadow-[0_0_25px_rgba(34,211,238,0.7)] flex items-center justify-center overflow-hidden">
               <Image
                 src="/trendgenie-logo.png"
@@ -182,14 +184,77 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-2 text-[11px] text-slate-400">
+            {/* ✅ Professional CTA button for main product */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.entiresolutions.trendgenie"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-amber-300 px-3.5 py-1.5 text-[11px] font-semibold text-slate-900 shadow-[0_0_22px_rgba(56,189,248,0.65)] hover:shadow-[0_0_30px_rgba(56,189,248,0.9)] hover:translate-y-[0.5px] transition"
+            >
+              <span>📱 Get the TrendGenie Android app</span>
+              <span className="text-[10px] opacity-80">Live on Google Play</span>
+            </a>
+
             <span className="px-2.5 py-1 rounded-full bg-slate-900/70 border border-slate-700/80">
               🧪 Beta · Educational only · Not financial advice
             </span>
             <span className="px-2.5 py-1 rounded-full bg-slate-900/70 border border-slate-700/80">
-              🔍 Honeypot.is · On-chain ownership · More signals coming soon
+              🔍 Honeypot DB · On-chain ownership · More signals coming soon
             </span>
           </div>
         </header>
+
+        {/* ✅ SEO-friendly intro section (simple, without breaking your layout) */}
+        <section className="rounded-3xl border border-slate-800/80 bg-slate-950/70 backdrop-blur-xl p-4 md:p-5 space-y-3">
+          <h2 className="text-sm md:text-base font-semibold text-slate-100">
+            DeFi safety scanner for Ethereum and BNB Chain with honeypot and rug pull risk checks
+          </h2>
+          <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+            TrendGenie RugShield is a web based DeFi safety scanner that helps you
+            understand if a token looks like a honeypot, rug pull or high risk
+            smart contract. It uses on chain data and external honeypot checks to
+            analyse contract ownership and basic behaviour, then turns everything
+            into a simple traffic light score for students, newcomers and pro DeFi
+            traders.
+          </p>
+          <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Alongside this scanner, the{" "}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.entiresolutions.trendgenie"
+              target="_blank"
+              rel="noreferrer"
+              className="text-cyan-300 hover:text-cyan-200 underline underline-offset-2"
+            >
+              TrendGenie Android app
+            </a>{" "}
+            helps you discover trending coins, monitor crypto market sentiment and
+            follow important news on the go. Together they give you a practical
+            way to explore new tokens while filtering out many obvious scam coins
+            on Ethereum and BNB Chain.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-2 text-[11px] text-slate-300">
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
+              <span>
+                Honeypot and rug pull signal for ERC-20 tokens on Ethereum and BSC.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span>
+                Beginner mode explains risk in simple English, pro mode keeps more
+                technical language.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-300" />
+              <span>
+                Designed for DeFi risk education, crypto safety awareness and web3
+                security learning.
+              </span>
+            </li>
+          </ul>
+        </section>
 
         {/* Main scanner card */}
         <div className="card-glass rounded-3xl p-5 md:p-6 lg:p-7">
@@ -487,7 +552,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 🔥 Roadmap / Next signals section (unchanged except one small text line) */}
+        {/* 🔥 Roadmap / Next signals section */}
         <section className="rounded-3xl border border-slate-800/80 bg-slate-950/70 backdrop-blur-xl p-5 md:p-6 lg:p-7">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
             <div>
@@ -593,6 +658,35 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ✅ Global footer – simple, professional, niche aligned */}
+        <footer className="border-t border-slate-800/80 pt-4 mt-4 pb-2 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-[11px] md:text-xs text-slate-500">
+          <div className="flex flex-wrap items-center gap-2">
+            <span>© {currentYear} TrendGenie · Built by Entire Solutions</span>
+            <span className="hidden md:inline text-slate-600">·</span>
+            <a
+              href="https://trendgenie.io"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-cyan-300"
+            >
+              trendgenie.io
+            </a>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.entiresolutions.trendgenie"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-cyan-300"
+            >
+              Android app on Google Play
+            </a>
+            <span className="text-[10px] text-slate-200">
+              Designed for DeFi risk education and crypto safety awareness.
+            </span>
+          </div>
+        </footer>
       </div>
     </main>
   );
