@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DeFi Safety Scanner - TrendGenie",
-  description: "Simple traffic-light scanner for DeFi tokens on Ethereum and BSC."
+  title: "TrendGenie RugShield – DeFi Safety Scanner for Ethereum & BNB (Honeypot & Rug Pull Risk)",
+  description: "TrendGenie RugShield is a free DeFi safety scanner for Ethereum and BNB Chain. Paste any token address and instantly see honeypot, rug pull and ownership risk with beginner and pro explanations."
 };
 
 export default function RootLayout({

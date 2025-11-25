@@ -683,7 +683,7 @@ export default function HomePage() {
               Android app on Google Play
             </a>
             <span className="text-[10px] text-slate-200">
-              Designed for DeFi risk education and crypto safety awareness.
+               Use the web scanner for deep risk checks and the Android app to track trending coins on the go.
             </span>
           </div>
         </footer>
