@@ -818,7 +818,7 @@ export default function HomePage() {
                       Phase 1 · LP and liquidity health
                     </h3>
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-200 border border-sky-500/40">
-                      In development
+                      In testing
                     </span>
                   </div>
                   <p className="text-[11px] text-slate-400">
