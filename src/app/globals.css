@@ -46,3 +46,191 @@ body {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+/* Glassmorphism base card */
+.card-glass {
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+  backdrop-filter: blur(26px) saturate(140%);
+  -webkit-backdrop-filter: blur(26px) saturate(140%);
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+/* Floating orbs */
+.tg-orb {
+  animation: tgFloatOrb 18s ease-in-out infinite alternate;
+}
+.tg-orb-slow {
+  animation: tgFloatOrb 26s ease-in-out infinite alternate;
+}
+.tg-orb-medium {
+  animation: tgFloatOrb 22s ease-in-out infinite alternate;
+}
+
+@keyframes tgFloatOrb {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -18px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-14px, 16px, 0) scale(1.02);
+  }
+}
+
+/* Slow rotating logo ring */
+.animate-spin-slow {
+  animation: spin 14s linear infinite;
+}
+
+/* Logo glow and pulse */
+.tg-logo-glow {
+  filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.75));
+}
+
+.tg-logo-pulse {
+  box-shadow: 0 0 26px rgba(34, 211, 238, 0.7);
+  animation: tgLogoPulse 3.2s ease-in-out infinite;
+}
+
+@keyframes tgLogoPulse {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* Input glow focus refinement */
+.tg-input-glow:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 1),
+    0 0 0 1px rgba(34, 211, 238, 0.8),
+    0 0 30px rgba(34, 211, 238, 0.55);
+}
+
+/* Shimmer effect on CTA and scan button */
+.tg-btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.tg-btn-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: translateX(-120%);
+}
+
+.tg-btn-shimmer:hover::before {
+  opacity: 0.85;
+  transform: translateX(120%);
+  transition:
+    transform 1.3s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.35s ease-out;
+}
+
+/* Error shake animation */
+.tg-error-shake {
+  animation: tgShake 0.35s ease-in-out;
+}
+
+@keyframes tgShake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-3px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Result fade in for cards */
+.tg-fade-in {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: tgFadeInUp 0.35s ease-out forwards;
+}
+
+@keyframes tgFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Roadmap hover micro interactions */
+.tg-roadmap-card {
+  transition:
+    transform 0.28s ease-out,
+    box-shadow 0.28s ease-out,
+    border-color 0.28s ease-out;
+}
+
+.tg-roadmap-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.98),
+    0 0 40px rgba(56, 189, 248, 0.15);
+  border-color: rgba(248, 250, 252, 0.55);
+}
+
+/* Custom scrollbar for results */
+.scroll-scan {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.8) transparent;
+}
+
+.scroll-scan::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-scan::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-scan::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 189, 248, 0.6),
+    rgba(16, 185, 129, 0.9)
+  );
+  border-radius: 999px;
+}
+
+/* Make transitions feel consistent across interactive elements */
+button,
+input,
+a,
+.card-glass {
+  transition:
+    background-color 0.18s ease-out,
+    border-color 0.18s ease-out,
+    color 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    transform 0.18s ease-out;
+}
+
