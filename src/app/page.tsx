@@ -791,7 +791,7 @@ export default function HomePage() {
                   </span>
                 </h2>
                 <p className="mt-1 text-[11px] md:text-xs text-slate-400 max-w-xl">
-                  TrendGenie is moving toward more institutional style DeFi tooling
+                  TrendGenie is moving toward more institutional DeFi tool
                   while keeping the UI friendly for students, new traders and pro
                   users at the same time.
                 </p>
